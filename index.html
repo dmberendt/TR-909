@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <style>
+
+.unpressed{
+  border-radius: 20px;
+  background: #f9f9f9;
+  box-shadow:  8px 8px 24px #dddddd,-8px -8px 24px #ffffff;
+  background: linear-gradient(0deg, #dddddd, #f0f0f0);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.pressed{
+  border-radius: 20px;
+  background: #f9f9f9;
+  box-shadow:  8px 8px 24px #ffffff,-8px -8px 24px #dddddd;
+  background: linear-gradient(0deg, #f0f0f0, #dddddd);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.padded{
+ padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+</style>
+<script>
+  var stop=0;//////////////https://drive.google.com/file/d/1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD/view?usp=drive_link
+  //var BT0A0A7 = new Audio('https://drive.google.com/file/d/1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD');
+  var BT0A0A7 = new Audio('https://docs.google.com/uc?export=download&id=1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD');
+  //"http://docs.google.com/uc?export=open&id=107VpNA7BU4AIxVsK2sRg69-rOigdU57n" type="audio/mp3"
+                           //https://drive.google.com/thumbnail?id=1BEW9tkgVKlp_ebUc17LkXDH-mnPc4ome&sz=w1000
+  
+</script>
+  </head>
+  <body>
+    <div id="main" style="height: 100%; width:100%">
+      <input type="text" id="bpm" value="112">
+  <input type="text" id="numLoops" value="10">
+  <button onclick='startSeq()'>start</button>
+  <button onclick='endSeq()'>end</button>
+  
+  <table style="height: 95%; width: 100%"><tr>
+    <td style="width: 15%">
+      <table id="tLeft" ><tr><td>
+        
+      </tr></td></table>
+    </td>
+    <td style="width: 75%">
+      <table id="bar" style="border: 1px solid; height: 100%; width: 100%">
+        <tr id="beats">
+          <td style="width: 25%">
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+          </td>
+          <td style="width: 25%">
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+          </td>
+          <td style="width: 25%">
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+          </td>
+          <td style="width: 25%">
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 10%">
+      <table id="tRight">  
+      </table>
+    </td>
+  </tr></table>
+  </div>
+  
+  <script>
+
+    //myAudioElement.addEventListener("canplaythrough", (event) => {
+    //  /* the audio is now playable; play it if permissions allow */
+    //  myAudioElement.play();
+    //});
+    
+
+  function startSeq(){
+    //var BT0A0A7 = new Audio('https://drive.google.com/file/d/1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD/view');
+    BT0A0A7.play();
+    stop=0;
+    var bar=document.getElementById("bar");
+    var rows = bar.rows;
+    var beats=rows[0].cells;
+    var beatTime=60000/document.getElementById("bpm").value;
+    const numLoops=document.getElementById("numLoops").value;
+
+    function delayedLoop(i, limit, delay) {
+      if(stop==0){
+      if (i < limit) {
+        setTimeout(() => {
+          delay=60000/document.getElementById("bpm").value;
+          beats[0].style.backgroundColor = "#FFFFFF";
+          beats[1].style.backgroundColor = "#FFFFFF";
+          beats[2].style.backgroundColor = "#FFFFFF";
+          beats[3].style.backgroundColor = "#FFFFFF";
+          beats[i%beats.length].style.backgroundColor = "#FFFFD0";
+          
+          delayedLoop(i + 1, limit, delay); // Call recursively for the next iteration
+        }, delay);
+      }
+      }else{
+        beats[0].style.backgroundColor = "#FFFFFF";
+        beats[1].style.backgroundColor = "#FFFFFF";
+        beats[2].style.backgroundColor = "#FFFFFF";
+        beats[3].style.backgroundColor = "#FFFFFF";
+        return;
+      }
+    }
+    
+    delayedLoop(0, numLoops * beats.length, beatTime); 
+    beats[3].style.backgroundColor = "#FFFFFF";
+  }
+  
+  function endSeq(){
+    stop=1;
+  }
+  
+
+  function becomePressed(element){
+    element.classList.remove("unpressed");
+    element.classList.add("pressed");
+    //element.onclick = becomeUnpressed(element);
+    element.setAttribute('onclick', 'becomeUnpressed(this)');
+  }
+  function becomeUnpressed(element){
+    element.classList.remove("pressed");
+    element.classList.add("unpressed");
+    //element.onclick = becomePressed(element);
+    element.setAttribute('onclick', 'becomePressed(this)');
+
+  }
+  
+  
+</script>
+  
+    
+  </body>
+</html>
