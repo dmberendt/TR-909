@@ -1,109 +1,107 @@
 <html>
   <head>
     <style>
+      .unpressed{
+        border-radius: 20px;
+        background: #f9f9f9;
+        box-shadow:  8px 8px 24px #dddddd,-8px -8px 24px #ffffff;
+        background: linear-gradient(0deg, #dddddd, #f0f0f0);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
 
-.unpressed{
-  border-radius: 20px;
-  background: #f9f9f9;
-  box-shadow:  8px 8px 24px #dddddd,-8px -8px 24px #ffffff;
-  background: linear-gradient(0deg, #dddddd, #f0f0f0);
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
+      .pressed{
+        border-radius: 20px;
+        background: #f9f9f9;
+        box-shadow:  8px 8px 24px #ffffff,-8px -8px 24px #dddddd;
+        background: linear-gradient(0deg, #f0f0f0, #dddddd);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
 
-.pressed{
-  border-radius: 20px;
-  background: #f9f9f9;
-  box-shadow:  8px 8px 24px #ffffff,-8px -8px 24px #dddddd;
-  background: linear-gradient(0deg, #f0f0f0, #dddddd);
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.padded{
- padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-}
-
-</style>
-<script>
-  var stop=0;//////////////https://drive.google.com/file/d/1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD/view?usp=drive_link
-  //var BT0A0A7 = new Audio(https://github.com/dmberendt/TR-909/blob/main/BT0A0A7.WAV?raw=true);
-  //var BT0A0A7 = new Audio(https://github.com/dmberendt/TR-909/blob/main/BT0A0A7.WAV);
-  //var BT0A0A7 = new Audio(/BT0A0A7.WAV);
-</script>
+      .padded{
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+      }
+    </style>
+    <script>
+      var stop=0;//////////////https://drive.google.com/file/d/1ajkEl_r98kUWkr_CcZ5F43iQyDsz-rPD/view?usp=drive_link
+      //var BT0A0A7 = new Audio(https://github.com/dmberendt/TR-909/blob/main/BT0A0A7.WAV?raw=true);
+      //var BT0A0A7 = new Audio(https://github.com/dmberendt/TR-909/blob/main/BT0A0A7.WAV);
+      //var BT0A0A7 = new Audio(/BT0A0A7.WAV);
+    </script>
   </head>
   <body>
     <div id="main" style="height: 100%; width:100%">
       <input type="text" id="bpm" value="112">
-  <input type="text" id="numLoops" value="10">
-  <button onclick='startSeq()'>start</button>
-  <button onclick='endSeq()'>end</button>
+      <input type="text" id="numLoops" value="10">
+      <button onclick='startSeq()'>start</button>
+      <button onclick='endSeq()'>end</button>
   
-  <table style="height: 95%; width: 100%"><tr>
-    <td style="width: 15%">
-      <table id="tLeft" ><tr><td>
-        
-      </tr></td></table>
-    </td>
-    <td style="width: 75%">
-      <table id="bar" style="border: 1px solid; height: 100%; width: 100%">
-        <tr id="beats">
-          <td style="width: 25%">
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
-          </td>
-          <td style="width: 25%">
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
-          </td>
-          <td style="width: 25%">
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
-          </td>
-          <td style="width: 25%">
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
-            <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
-          </td>
-        </tr>
-      </table>
-    </td>
-    <td style="width: 10%">
-      <table id="tRight">  
-      </table>
-    </td>
-  </tr></table>
-  </div>
+      <table style="height: 95%; width: 100%"><tr>
+        <td style="width: 15%">
+          <table id="tLeft" ><tr><td>
+            
+          </tr></td></table>
+        </td>
+        <td style="width: 75%">
+          <table id="bar" style="border: 1px solid; height: 100%; width: 100%">
+            <tr id="beats">
+              <td style="width: 25%">
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+              </td>
+              <td style="width: 25%">
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                  <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+              </td>
+              <td style="width: 25%">
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+              </td>
+              <td style="width: 25%">
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div><br>
+                <div class="padded"><div class="unpressed" onclick="becomePressed(this)"></div></div>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 10%">
+          <table id="tRight">  
+          </table>
+        </td>
+      </tr></table>
+    </div>
   
   <script>
     
